@@ -7,8 +7,17 @@ import mapWordsFromDto from "@/app/utils/mapWordsFromDto";
 import Word from "@/app/types/Word";
 import shuffleArray from "@/app/utils/shuffleArray";
 import Link from "next/link";
+import { Suspense } from "react";
 
 const Page = () => {
+  return (
+    <Suspense>
+      <GrindPage />
+    </Suspense>
+  );
+};
+
+const GrindPage = () => {
   const params = useSearchParams();
   const down = params.get("downIndex");
   const up = params.get("upIndex");

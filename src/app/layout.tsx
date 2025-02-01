@@ -1,14 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Kosugi_Maru, Kaisei_Decol, Rubik } from "next/font/google";
+import "./globals.scss";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const kaiseiDecol = Kaisei_Decol({
+  variable: "--font-kaisei-decol",
+  subsets: ["latin-ext"],
+  weight: "400",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const kosugiMaru = Kosugi_Maru({
+  variable: "--font-kosugi-maru",
+  subsets: ["latin-ext"],
+  weight: "400",
+});
+
+const rubik = Rubik({
+  variable: "--font-rubik",
   subsets: ["latin"],
 });
 
@@ -24,7 +31,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body
+        className={`${kaiseiDecol.variable} ${kosugiMaru.variable} ${rubik.variable}`}
+      >
         {children}
       </body>
     </html>

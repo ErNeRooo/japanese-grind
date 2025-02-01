@@ -1,0 +1,21 @@
+.ServiceButton {
+  min-width: 15rem;
+  height: 10rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 0.1rem solid rgb(255, 255, 255);
+  border-radius: 1rem;
+
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+
+  label {
+    display: block;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-family: var(--font-rubik);
+  }
+}

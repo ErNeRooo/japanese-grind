@@ -1,6 +1,6 @@
 "use client";
 import { useSearchParams } from "next/navigation";
-import styles from "./grind.module.sass";
+import styles from "./grind.module.scss";
 import { useEffect, useState } from "react";
 import fetchJsonDictionary from "@/app/utils/fetchJsonDictionary";
 import mapWordsFromDto from "@/app/utils/mapWordsFromDto";

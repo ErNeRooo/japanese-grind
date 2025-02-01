@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import styles from "./vocabulary.module.sass";
+import styles from "./vocabulary.module.scss";
 import Link from "next/link";
 
 const Page = () => {

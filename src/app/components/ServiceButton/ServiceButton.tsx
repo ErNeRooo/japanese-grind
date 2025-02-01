@@ -1,4 +1,4 @@
-import styles from "./ServiceButton.module.sass";
+import styles from "./ServiceButton.module.scss";
 
 const ServiceButton = ({ title }: Props) => {
   return (

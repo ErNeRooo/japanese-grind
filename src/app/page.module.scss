@@ -47,6 +47,8 @@
   font-family: var(--font-kosugi-maru);
   font-weight: 400;
   text-wrap: wrap;
+
+  animation: comeFromLeft 1s ease-out;
 }
 
 .englishTitle {
@@ -54,6 +56,34 @@
   font-family: var(--font-rubik);
   font-weight: 400;
   text-wrap: wrap;
+
+  animation: comeFromRight 1s ease-out;
+}
+
+@keyframes comeFromLeft {
+  0% {
+    transform: translateX(-25%);
+    opacity: 0;
+  }
+  40% {
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes comeFromRight {
+  0% {
+    transform: translateX(25%);
+    opacity: 0;
+  }
+  40% {
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .buttons {

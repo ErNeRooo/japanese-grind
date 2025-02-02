@@ -13,7 +13,7 @@ export default function Home() {
               {"Welcome to Japanese Grind"}
             </label>
             <label className={styles.japaneseTitle}>
-              {" 日本語のグラインドへようこそ"}
+              {"日本語のグラインドへようこそ"}
             </label>
           </div>
 
@@ -33,7 +33,13 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.verticalContainer}>
-          <Image src="/logo.svg" alt="logo" width={400} height={400} />
+          <Image
+            src="/japanese-grind.svg"
+            alt="logo"
+            height={700}
+            width={500}
+            className={styles.responsiveImage}
+          />
         </div>
       </div>
       <div className={styles.container}></div>

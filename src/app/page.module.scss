@@ -9,23 +9,37 @@
   flex-direction: column;
 
   background: none;
+}
 
-  h1 {
-    color: white;
-  }
+.container {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  box-sizing: border-box;
+}
+
+.verticalContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  text-align: left;
+
+  display: flex;
+  flex-direction: column;
+
+  color: white;
+  white-space: pre;
 }
 
 .japaneseTitle {
   font-size: 3rem;
   font-family: var(--font-kosugi-maru);
-  font-weight: 400;
-
-  margin: 1rem;
-}
-
-.japaneseTitlee {
-  font-size: 3rem;
-  font-family: var(--font-kaisei-decol), sans-serif;
   font-weight: 400;
 
   margin: 1rem;
@@ -39,16 +53,17 @@
   margin-top: 2rem;
 }
 
-.container {
-  max-width: 48rem;
-
+.buttons {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+
+  gap: 0.5rem;
+  margin-left: 3rem;
+
+  box-sizing: border-box;
 }
 
 .link {
   all: unset;
-  flex-grow: 1;
+  width: fit-content;
 }

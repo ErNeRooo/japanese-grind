@@ -5,8 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 
 const Page = () => {
-  const [downIndex, setDownIndex] = useState(0);
-  const [upIndex, setUpIndex] = useState(0);
+  const [downIndex, setDownIndex] = useState(1);
+  const [upIndex, setUpIndex] = useState(10);
 
   return (
     <div className={styles.page}>
@@ -36,7 +36,7 @@ const Page = () => {
             <label>from</label>
             <input
               type="number"
-              value={downIndex}
+              placeholder="1"
               onChange={(e) => setDownIndex(Number(e.target.value))}
             />
           </div>
@@ -45,7 +45,7 @@ const Page = () => {
             <label>to</label>
             <input
               type="number"
-              value={upIndex}
+              placeholder="10"
               onChange={(e) => setUpIndex(Number(e.target.value))}
             />
           </div>

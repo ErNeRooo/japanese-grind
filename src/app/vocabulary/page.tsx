@@ -2,6 +2,7 @@
 import { useState } from "react";
 import styles from "./vocabulary.module.scss";
 import Link from "next/link";
+import Image from "next/image";
 
 const Page = () => {
   const [downIndex, setDownIndex] = useState(0);
@@ -9,36 +10,52 @@ const Page = () => {
 
   return (
     <div className={styles.page}>
-      <h1>Vocabulary Learning</h1>
+      <h1 className={styles.title}>Vocabulary Learning</h1>
       <div className={styles.container}>
-        <h2>Word Index range</h2>
         <div className={styles.row}>
-          <h3>from</h3>
-          <input
-            type="number"
-            value={downIndex}
-            onChange={(e) => setDownIndex(Number(e.target.value))}
-          />
+          <Link href="/" className={styles.backLink}>
+            <button className={styles.backButton}>
+              <Image
+                src="/back.svg"
+                alt="back"
+                layout="fill"
+                objectFit="cover"
+                className={styles.backIcon}
+              />
+            </button>
+          </Link>
+          <h2 className={styles.subtitle}>Create your study</h2>
         </div>
+
+        <p>Choose the range of words you want to study!</p>
+
         <div className={styles.row}>
-          <h3>to</h3>
-          <input
-            type="number"
-            value={upIndex}
-            onChange={(e) => setUpIndex(Number(e.target.value))}
-          />
+          <div className={styles.inputContainer}>
+            <label>from</label>
+            <input
+              type="number"
+              value={downIndex}
+              onChange={(e) => setDownIndex(Number(e.target.value))}
+            />
+          </div>
+
+          <div className={styles.inputContainer}>
+            <label>to</label>
+            <input
+              type="number"
+              value={upIndex}
+              onChange={(e) => setUpIndex(Number(e.target.value))}
+            />
+          </div>
         </div>
         <Link
           href={{
             pathname: "/vocabulary/grind",
             query: { downIndex: downIndex, upIndex: upIndex },
           }}
+          className={styles.grindLink}
         >
           <button className={styles.grindButton}>GRIND</button>
-        </Link>
-
-        <Link href="/">
-          <button className={styles.backButton}>BACK</button>
         </Link>
       </div>
     </div>

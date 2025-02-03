@@ -12,7 +12,7 @@
 .title {
   margin-bottom: 0;
 
-  color: var(--color-main-font);
+  color: var(--color-second-font);
 }
 
 .container {
@@ -46,40 +46,6 @@
   margin-top: 1.5rem;
 
   color: var(--color-second-font);
-}
-
-.backLink {
-  justify-self: flex-start !important;
-}
-
-.backButton {
-  width: 2rem;
-  height: 2rem;
-
-  position: relative;
-
-  box-sizing: border-box;
-  border: 0.1rem solid var(--color-main-font);
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-
-  background-color: transparent;
-
-  transition: 200ms;
-
-  &:hover {
-    border-radius: 1rem;
-    background-color: var(--color-main-font);
-  }
-
-  &:hover .backIcon {
-    filter: invert(1) brightness(0);
-  }
-
-  &:active .backIcon {
-    filter: brightness(0) saturate(100%) invert(18%) sepia(53%) saturate(6512%)
-      hue-rotate(338deg) brightness(71%) contrast(115%);
-  }
 }
 
 .row {
@@ -138,7 +104,7 @@
 .grindLink {
   width: 100%;
 
-  margin-top: 2rem;
+  margin-top: auto;
 }
 
 .grindButton {
@@ -163,5 +129,8 @@
   &:active {
     background-color: var(--color-main-font);
     color: var(--color-accent);
+
+    transform: scale(0.95);
+    border-radius: 2rem;
   }
 }

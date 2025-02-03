@@ -2497,7 +2497,7 @@
   {
     "Index": 277,
     "Kanji": "逆",
-    "Kana": "っやく",
+    "Kana": "ぎゃく",
     "PartsOfSpeech": ["n.", "na-adj."],
     "EnglishTranslations": ["contrary, opposite"],
     "Example": "予想とは逆の結果が出た。",
@@ -2650,7 +2650,7 @@
   {
     "Index": 294,
     "Kanji": "病院",
-    "Kana": "っよういん",
+    "Kana": "びょういん",
     "PartsOfSpeech": ["n."],
     "EnglishTranslations": ["hospital, clinic"],
     "Example": "具合が悪かったので病院へ行った。",
@@ -3328,7 +3328,7 @@
   {
     "Index": 369,
     "Kanji": "病気",
-    "Kana": "っようき",
+    "Kana": "びょうき",
     "PartsOfSpeech": ["n."],
     "EnglishTranslations": ["sickness, illness"],
     "Example": "彼は病気になった。",
@@ -3566,7 +3566,7 @@
   {
     "Index": 395,
     "Kanji": "企業",
-    "Kana": "きっよう",
+    "Kana": "きぎょう",
     "PartsOfSpeech": ["n."],
     "EnglishTranslations": ["company, business"],
     "Example": "兄は日本企業で働いている。",
@@ -5312,7 +5312,7 @@
   {
     "Index": 589,
     "Kanji": "授業",
-    "Kana": "じゅっよう",
+    "Kana": "じゅぎょう",
     "PartsOfSpeech": ["n."],
     "EnglishTranslations": ["class, lesson at school"],
     "Example": "授業は九時から始まる。",
@@ -6563,7 +6563,7 @@
   {
     "Index": 728,
     "Kanji": "作業（する）",
-    "Kana": "さっよう(する)",
+    "Kana": "さぎょう(する)",
     "PartsOfSpeech": ["n.", "v."],
     "EnglishTranslations": ["operation, work / work"],
     "Example": "彼は作業を終えた。",
@@ -6781,7 +6781,7 @@
   {
     "Index": 752,
     "Kanji": "発表（する）",
-    "Kana": "はっっよう(する)",
+    "Kana": "はっぴょう(する)",
     "PartsOfSpeech": ["n.", "v."],
     "EnglishTranslations": ["announcement, publication / announce, publish"],
     "Example": "先ほど選挙の結果が発表されました。",
@@ -7726,7 +7726,7 @@
   {
     "Index": 856,
     "Kanji": "卒業（する）",
-    "Kana": "そつっよう(する)",
+    "Kana": "そつぎょう(する)",
     "PartsOfSpeech": ["n.", "v."],
     "EnglishTranslations": ["graduation / graduate"],
     "Example": "昨年大学を卒業しました。",
@@ -8286,7 +8286,7 @@
   {
     "Index": 918,
     "Kanji": "事業",
-    "Kana": "じっよう",
+    "Kana": "じぎょう",
     "PartsOfSpeech": ["n."],
     "EnglishTranslations": ["business, enterprise, project"],
     "Example": "私は友人と事業を始めることにした。",
@@ -10290,7 +10290,7 @@
   {
     "Index": 1140,
     "Kanji": "コンピューター、コンピュータ",
-    "Kana": "こんっゆうたあ, こんっゆうた",
+    "Kana": "こんぴゅうたあ, こんぴゅうた",
     "PartsOfSpeech": ["n."],
     "EnglishTranslations": ["computer"],
     "Example": "コンピューターの電源を切った。",
@@ -13601,7 +13601,7 @@
   {
     "Index": 1506,
     "Kanji": "業務",
-    "Kana": "っようむ",
+    "Kana": "ぎょうむ",
     "PartsOfSpeech": ["n."],
     "EnglishTranslations": ["business, work"],
     "Example": "これも私たちにとって重要な業務である。",
@@ -14766,7 +14766,7 @@
   {
     "Index": 1635,
     "Kanji": "牛乳",
-    "Kana": "っゆうにゅう",
+    "Kana": "ぎゅうにゅう",
     "PartsOfSpeech": ["n."],
     "EnglishTranslations": ["(cow’s) milk"],
     "Example": "私は朝食に牛乳を飲む。",
@@ -15562,7 +15562,7 @@
   {
     "Index": 1723,
     "Kanji": "営業（する）",
-    "Kana": "えいっよう(する)",
+    "Kana": "えいぎょう(する)",
     "PartsOfSpeech": ["n.", "v."],
     "EnglishTranslations": ["business, sales"],
     "Example": "私は営業を担当しています。",
@@ -18433,7 +18433,7 @@
   {
     "Index": 2041,
     "Kanji": "職業",
-    "Kana": "しょくっよう",
+    "Kana": "しょくぎょう",
     "PartsOfSpeech": ["n."],
     "EnglishTranslations": ["occupation, trade, profession"],
     "Example": "将来どんな職業に就きたいですか。",
@@ -18649,7 +18649,7 @@
   {
     "Index": 2065,
     "Kanji": "農業",
-    "Kana": "のうっよう",
+    "Kana": "のうぎょう",
     "PartsOfSpeech": ["n."],
     "EnglishTranslations": ["agriculture"],
     "Example": "両親は農業を営んでいる。",
@@ -18991,7 +18991,7 @@
   {
     "Index": 2103,
     "Kanji": "行事",
-    "Kana": "っようじ",
+    "Kana": "ぎょうじ",
     "PartsOfSpeech": ["n."],
     "EnglishTranslations": ["event"],
     "Example": "お正月は日本で一番大きな行事だ。",
@@ -19180,7 +19180,7 @@
   {
     "Index": 2124,
     "Kanji": "行政",
-    "Kana": "っようせい",
+    "Kana": "ぎょうせい",
     "PartsOfSpeech": ["n."],
     "EnglishTranslations": ["administration, government"],
     "Example": "地方行政のための選挙が行われる。",
@@ -21648,7 +21648,7 @@
   {
     "Index": 2397,
     "Kanji": "産業",
-    "Kana": "さんっよう",
+    "Kana": "さんぎょう",
     "PartsOfSpeech": ["n."],
     "EnglishTranslations": ["industry"],
     "Example": "多くのアフリカの国では産業が発達していない。",
@@ -22668,7 +22668,7 @@
   {
     "Index": 2510,
     "Kanji": "業界",
-    "Kana": "っようかい",
+    "Kana": "ぎょうかい",
     "PartsOfSpeech": ["n."],
     "EnglishTranslations": ["business world"],
     "Example": "姉は映画業界で働いている。",
@@ -22929,7 +22929,7 @@
   {
     "Index": 2539,
     "Kanji": "業者",
-    "Kana": "っようしゃ",
+    "Kana": "ぎょうしゃ",
     "PartsOfSpeech": ["n."],
     "EnglishTranslations": ["dealer", "agent", "operator"],
     "Example": "この部屋の掃除は業者に頼んである。",
@@ -23271,7 +23271,7 @@
   {
     "Index": 2577,
     "Kanji": "従業員",
-    "Kana": "じゅうっよう-いん",
+    "Kana": "じゅうぎょう-いん",
     "PartsOfSpeech": ["n."],
     "EnglishTranslations": ["employee, worker"],
     "Example": "このホテルの従業員はみんな若い。",
@@ -25757,7 +25757,7 @@
   {
     "Index": 2853,
     "Kanji": "中小企業",
-    "Kana": "ちゅうしょう きっよう",
+    "Kana": "ちゅうしょう きぎょう",
     "PartsOfSpeech": ["n."],
     "EnglishTranslations": ["small and medium-sized enterprises"],
     "Example": "中小企業の倒産が相次いだ。",
@@ -26678,7 +26678,7 @@
   {
     "Index": 2955,
     "Kanji": "平等",
-    "Kana": "っようどう",
+    "Kana": "びょうどう",
     "PartsOfSpeech": ["n.", "na-adj."],
     "EnglishTranslations": ["equality", "equal"],
     "Example": "この会社は男女平等を推進している。",
@@ -28688,7 +28688,7 @@
   {
     "Index": 3178,
     "Kanji": "インタビュー（する）",
-    "Kana": "いんたっゆう(する)",
+    "Kana": "いんたびゅう(する)",
     "PartsOfSpeech": ["n.", "v."],
     "EnglishTranslations": ["interview"],
     "Example": "大統領が記者のインタビューに答えた。",
@@ -28958,7 +28958,7 @@
   {
     "Index": 3208,
     "Kanji": "デビュー（する）",
-    "Kana": "でっゆう(する)",
+    "Kana": "でびゅう(する)",
     "PartsOfSpeech": ["n.", "v."],
     "EnglishTranslations": ["debut"],
     "Example": "その歌手は昨年デビューしたばかりだ。",
@@ -31473,7 +31473,7 @@
   {
     "Index": 3487,
     "Kanji": "餃子",
-    "Kana": "っようざ",
+    "Kana": "ぎょうざ",
     "PartsOfSpeech": ["n."],
     "EnglishTranslations": ["Chinese dumpling"],
     "Example": "家で餃子を作った。",
@@ -31599,7 +31599,7 @@
   {
     "Index": 3501,
     "Kanji": "大企業",
-    "Kana": "だい-きっよう",
+    "Kana": "だい-きぎょう",
     "PartsOfSpeech": ["n."],
     "EnglishTranslations": ["big business"],
     "Example": "兄は大企業に就職した。",
@@ -32076,7 +32076,7 @@
   {
     "Index": 3554,
     "Kanji": "人形",
-    "Kana": "にんっよう",
+    "Kana": "にんぎょう",
     "PartsOfSpeech": ["n."],
     "EnglishTranslations": ["doll"],
     "Example": "彼女は色々な人形を持っている。",
@@ -32202,7 +32202,7 @@
   {
     "Index": 3568,
     "Kanji": "虐待（する）",
-    "Kana": "っやくたい(する)",
+    "Kana": "ぎゃくたい(する)",
     "PartsOfSpeech": ["n.", "v."],
     "EnglishTranslations": ["abuse"],
     "Example": "子供の虐待は深刻な問題だ。",
@@ -34503,7 +34503,7 @@
   {
     "Index": 3823,
     "Kanji": "専業主婦",
-    "Kana": "せんっよう しゅふ",
+    "Kana": "せんぎょう しゅふ",
     "PartsOfSpeech": ["n."],
     "EnglishTranslations": ["housewife, homemaker"],
     "Example": "母は専業主婦です。",
@@ -35108,7 +35108,7 @@
   {
     "Index": 3890,
     "Kanji": "残業",
-    "Kana": "ざんっよう",
+    "Kana": "ざんぎょう",
     "PartsOfSpeech": ["n."],
     "EnglishTranslations": ["overtime work"],
     "Example": "私は残業で疲れていた。",
@@ -35435,7 +35435,7 @@
   {
     "Index": 3926,
     "Kanji": "三百円",
-    "Kana": "さんっやく えん",
+    "Kana": "さんびゃく えん",
     "PartsOfSpeech": ["n."],
     "EnglishTranslations": ["three hundred yen"],
     "Example": "入館料は一人三百円です。",
@@ -35900,7 +35900,7 @@
   {
     "Index": 3977,
     "Kanji": "行列（する）",
-    "Kana": "っようれつ(する)",
+    "Kana": "ぎょうれつ(する)",
     "PartsOfSpeech": ["n.", "v."],
     "EnglishTranslations": ["procession, line, parade", "line up, queue"],
     "Example": "駅に切符を買う長い行列ができていた。",
@@ -38613,7 +38613,7 @@
   {
     "Index": 4276,
     "Kanji": "業績",
-    "Kana": "っようせき",
+    "Kana": "ぎょうせき",
     "PartsOfSpeech": ["n."],
     "EnglishTranslations": ["achievements"],
     "Example": "彼は仕事で立派な業績をあげた。",
@@ -38946,7 +38946,7 @@
   {
     "Index": 4313,
     "Kanji": "牛肉",
-    "Kana": "っゆうにく",
+    "Kana": "ぎゅうにく",
     "PartsOfSpeech": ["n."],
     "EnglishTranslations": ["beef"],
     "Example": "鶏肉と牛肉とどちらになさいますか。",
@@ -39729,7 +39729,7 @@
   {
     "Index": 4400,
     "Kanji": "業種",
-    "Kana": "っようしゅ",
+    "Kana": "ぎょうしゅ",
     "PartsOfSpeech": ["n."],
     "EnglishTranslations": ["category of business, type of industry"],
     "Example": "業種ごとに名刺を並べる。",

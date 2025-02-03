@@ -8,6 +8,7 @@ import Word from "@/app/types/Word";
 import shuffleArray from "@/app/utils/shuffleArray";
 import Link from "next/link";
 import { Suspense } from "react";
+import BackButton from "@/app/components/BackButton/BackButton";
 
 const Page = () => {
   return (
@@ -71,33 +72,72 @@ const GrindPage = () => {
     <div className={styles.page}>
       <div className={styles.container}>
         {isLoading ? (
-          <h1>Loading...</h1>
+          <h1 className={styles.loading}>Loading...</h1>
         ) : (
           <>
             {words.length == 0 ? (
-              <>
-                <h1>Finished</h1>
-                <Link href="/vocabulary">Back</Link>
-              </>
+              <div className={styles.column}>
+                <h1 className={styles.finished}>Congratulations!!!</h1>
+                <h1 className={styles.finishedJapanese}>おめでとう!</h1>
+                <h1 className={styles.finishedMessage}>
+                  You’ve successfully completed this lesson! 🎉 Keep up the
+                  great work and continue your journey toward mastering
+                  Japanese. Ready for the next challenge?
+                </h1>
+                <Link className={styles.returnButton} href="/vocabulary">
+                  はい！
+                </Link>
+              </div>
             ) : (
               <>
-                {isChecked ? (
-                  <>
-                    <h1>{words[wordIndex].Kanji}</h1>
-                    <h1>{words[wordIndex].Kana}</h1>
-                  </>
-                ) : (
-                  <h1>{words[wordIndex].EnglishTranslations.map((t) => t)}</h1>
-                )}
+                <div className={styles.column}>
+                  <div className={styles.row}>
+                    <BackButton routingPath="/vocabulary" />
+                  </div>
+                  {isChecked ? (
+                    <div className={styles.column}>
+                      <label className={styles.answerLabel}>
+                        {words[wordIndex].Kanji}
+                      </label>
+                      <hr className={styles.divider} />
+                      <label className={styles.answerLabel}>
+                        {words[wordIndex].Kana}
+                      </label>
+                    </div>
+                  ) : (
+                    <div className={styles.column}>
+                      {words[wordIndex].EnglishTranslations.map((t) => (
+                        <label className={styles.meaningLabel} key={t}>
+                          {t}
+                        </label>
+                      ))}
+                    </div>
+                  )}
+                </div>
 
                 <div className={styles.row}>
                   {!isChecked ? (
-                    <button onClick={handleCheckOnClick}>Check</button>
+                    <button
+                      className={`${styles.button} ${styles.checkButton}`}
+                      onClick={handleCheckOnClick}
+                    >
+                      Check
+                    </button>
                   ) : (
-                    <>
-                      <button onClick={handleMistakeOnClick}>Incorrect</button>
-                      <button onClick={handleCorrectOnClick}>Correct</button>
-                    </>
+                    <div className={styles.buttonsRow}>
+                      <button
+                        className={`${styles.button} ${styles.mistakeButton}`}
+                        onClick={handleMistakeOnClick}
+                      >
+                        Incorrect
+                      </button>
+                      <button
+                        className={`${styles.button} ${styles.correctButton}`}
+                        onClick={handleCorrectOnClick}
+                      >
+                        Correct
+                      </button>
+                    </div>
                   )}
                 </div>
               </>

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import styles from "./vocabulary.module.scss";
 import Link from "next/link";
-import Image from "next/image";
+import BackButton from "../components/BackButton/BackButton";
 
 const Page = () => {
   const [downIndex, setDownIndex] = useState(1);
@@ -13,17 +13,7 @@ const Page = () => {
       <h1 className={styles.title}>Vocabulary Learning</h1>
       <div className={styles.container}>
         <div className={styles.row}>
-          <Link href="/" className={styles.backLink}>
-            <button className={styles.backButton}>
-              <Image
-                src="/back.svg"
-                alt="back"
-                layout="fill"
-                objectFit="cover"
-                className={styles.backIcon}
-              />
-            </button>
-          </Link>
+          <BackButton routingPath="/" />
           <h2 className={styles.subtitle}>Create your study</h2>
         </div>
 

@@ -10,14 +10,18 @@
 }
 
 .title {
-  color: white;
+  color: var(--color-main-font);
 }
 
 .subtitle {
   margin: 0;
 
-  color: white;
+  color: var(--color-main-font);
   font-weight: 500;
+}
+
+.description {
+  color: var(--color-second-font);
 }
 
 .backLink {
@@ -31,7 +35,7 @@
   position: relative;
 
   box-sizing: border-box;
-  border: 0.1rem solid white;
+  border: 0.1rem solid var(--color-main-font);
   border-radius: 0.5rem;
   padding: 0.5rem;
 
@@ -41,7 +45,7 @@
 
   &:hover {
     border-radius: 1rem;
-    background-color: white;
+    background-color: var(--color-main-font);
   }
 
   &:hover .backIcon {
@@ -67,9 +71,8 @@
   gap: 1rem;
   flex-wrap: wrap;
 
-  color: white;
+  color: var(--color-main-font);
   box-sizing: border-box;
-  border: 1px solid white;
   padding: 1rem;
 }
 
@@ -118,6 +121,22 @@
 
   flex: 1;
 
+  background-color: var(--color-background);
+  color: var(--color-main-font);
+
   border-radius: 1rem;
+  border: 0.2rem solid var(--color-main-font);
   font-size: 3rem;
+
+  transition: 200ms;
+
+  &:hover {
+    background-color: var(--color-main-font);
+    color: var(--color-background);
+  }
+
+  &:active {
+    background-color: var(--color-main-font);
+    color: var(--color-accent);
+  }
 }

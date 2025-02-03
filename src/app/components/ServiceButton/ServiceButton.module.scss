@@ -6,7 +6,7 @@
   border-radius: 1rem;
   padding: 0.1rem;
   box-sizing: border-box;
-  background-color: rgb(0, 0, 0);
+  background-color: var(--color-background);
   text-decoration: none;
 
   .inner {
@@ -21,12 +21,11 @@
 
     margin: 0.1rem;
     padding: 0.5rem;
-    background: black;
-    color: #fff;
+    background: var(--color-background);
     border-radius: 1rem;
 
     label {
-      color: rgb(174, 174, 174);
+      color: var(--color-second-font);
       text-align: center;
       vertical-align: middle;
       text-decoration: none;
@@ -45,12 +44,12 @@
     top: 0;
     z-index: 0;
     background: linear-gradient(
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0) 40%,
-      #bd0029 41%,
-      #bd0029 59%,
-      rgba(255, 255, 255, 0) 60%,
-      rgba(255, 255, 255, 0) 100%
+      transparent 0%,
+      transparent 40%,
+      var(--color-accent) 41%,
+      var(--color-accent) 59%,
+      transparent 60%,
+      transparent 100%
     );
 
     opacity: 0;

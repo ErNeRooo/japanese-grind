@@ -27,7 +27,9 @@ const Page = () => {
           <h2 className={styles.subtitle}>Create your study</h2>
         </div>
 
-        <p>Choose the range of words you want to study!</p>
+        <p className={styles.description}>
+          Choose the range of words you want to study!
+        </p>
 
         <div className={styles.row}>
           <div className={styles.inputContainer}>

@@ -1,6 +1,13 @@
+:root {
+  --color-background: #000000;
+  --color-main-font: #ffffff;
+  --color-second-font: #b7b7b7;
+  --color-accent: #bd0029;
+}
+
 html,
 body {
   height: 100%;
   margin: 0;
-  background-color: black;
+  background-color: var(--color-background);
 }

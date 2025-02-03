@@ -21,15 +21,21 @@ export default function Home() {
             <Link href="/vocabulary" className={styles.link}>
               <ServiceButton title="Vocabulary" japaneseTitle="語彙" />
             </Link>
-            <Link href="/kana" className={styles.link}>
+            <a
+              href="https://nihon-go-kaizen.web.app/kana"
+              className={styles.link}
+            >
               <ServiceButton title="Hiragana" japaneseTitle="ひらがな" />
-            </Link>
-            <Link href="/kana" className={styles.link}>
+            </a>
+            <a
+              href="https://nihon-go-kaizen.web.app/kana"
+              className={styles.link}
+            >
               <ServiceButton title="Katakana" japaneseTitle="かたかな" />
-            </Link>
-            <Link href="/dictionary" className={styles.link}>
+            </a>
+            <a href="https://nihon-go-kaizen.web.app" className={styles.link}>
               <ServiceButton title="Dictionary" japaneseTitle="辞書" />
-            </Link>
+            </a>
           </div>
         </div>
         <div className={styles.verticalContainer}>

@@ -58,7 +58,7 @@
 
   text-align: center;
   font-size: 2rem;
-  font-family: var(--font-rubik);
+  font-family: var(--font-main-latin);
 }
 
 .answerLabel {
@@ -66,7 +66,7 @@
 
   text-align: center;
   font-size: 2rem;
-  font-family: var(--font-kosugi-maru);
+  font-family: var(--font-precise-japanese);
 }
 
 .button {
@@ -76,7 +76,7 @@
 
   height: 3rem;
 
-  font-family: var(--font-rubik);
+  font-family: var(--font-main-latin);
   font-size: 2rem;
   text-align: center;
 
@@ -147,15 +147,15 @@
 }
 
 .finished {
-  font-family: var(--font-rubik);
+  font-family: var(--font-main-latin);
   margin: 0.5rem;
 }
 .finishedJapanese {
-  font-family: var(--font-kaisei-decol);
+  font-family: var(--font-main-japanese);
   margin: 0.5rem;
 }
 .finishedMessage {
-  font-family: var(--font-rubik);
+  font-family: var(--font-main-latin);
   font-weight: 500;
   font-size: 1.5rem;
 
@@ -173,7 +173,7 @@
   user-select: none;
 
   text-align: center;
-  font-family: var(--font-kaisei-decol);
+  font-family: var(--font-main-japanese);
   font-size: 2rem;
 
   transition: 200ms;
@@ -190,5 +190,6 @@
 }
 
 .loading {
-  font-family: var(--font-rubik);
+  font-family: var(--font-main-latin);
+  font-weight: 500;
 }

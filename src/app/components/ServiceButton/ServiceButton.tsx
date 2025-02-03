@@ -4,8 +4,8 @@ const ServiceButton = ({ title, japaneseTitle }: Props) => {
   return (
     <div className={styles.ServiceButton}>
       <div className={styles.inner}>
-        <label>{title}</label>
-        <label>{japaneseTitle}</label>
+        <label className={styles.title}>{title}</label>
+        <label className={styles.japaneseTitle}>{japaneseTitle}</label>
       </div>
     </div>
   );

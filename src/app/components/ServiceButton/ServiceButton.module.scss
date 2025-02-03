@@ -25,11 +25,12 @@
     border-radius: 1rem;
 
     label {
-      color: var(--color-second-font);
-      text-align: center;
       vertical-align: middle;
+
+      color: var(--color-second-font);
+
+      text-align: center;
       text-decoration: none;
-      font-family: var(--font-rubik);
       font-size: 2rem;
     }
   }
@@ -66,4 +67,12 @@
     opacity: 0;
     transform: rotate(0deg);
   }
+}
+
+.title {
+  font-family: var(--font-main-latin);
+}
+
+.japaneseTitle {
+  font-family: var(--font-main-japanese);
 }

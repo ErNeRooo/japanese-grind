@@ -2,7 +2,7 @@
 import { useSearchParams } from "next/navigation";
 import styles from "./grind.module.scss";
 import { useEffect, useState } from "react";
-import fetchJsonDictionary from "@/app/utils/fetchJsonDictionary";
+import fetchJsonDictionary from "@/app/service/fetchJsonDictionary";
 import mapWordsFromDto from "@/app/utils/mapWordsFromDto";
 import Word from "@/app/types/Word";
 import shuffleArray from "@/app/utils/shuffleArray";

@@ -8,7 +8,6 @@ import fetchJsonDictionary from "../service/fetchJsonDictionary";
 export interface CardGrindLesson {
   isLoading: boolean;
   isChecked: boolean;
-  isLessonFinished: boolean;
   currentWord: Word;
   turnCard: () => void;
   correctClick: () => void;
@@ -29,40 +28,41 @@ export const useCardGrindLesson = (): CardGrindLesson => {
 
   const [isChecked, setIsChecked] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-  const [isLessonFinished, setIsLessonFinished] = useState(false);
 
   const turnCard = () => {
     setIsChecked((prev) => !prev);
   };
 
   const correctClick = () => {
-    setCorrectWords([...correctWords, words[currentWordIndex]]);
-    setNextWord();
+    setCorrectWords(prev => [...prev, words[currentWordIndex]]);
   };
 
   const mistakeClick = () => {
-    setMistakenWords([...mistakenWords, words[currentWordIndex]]);
-    setNextWord();
+    setMistakenWords(prev => [...prev, words[currentWordIndex]]);
   };
 
   const setNextWord = () => {
-    if (currentWordIndex == words.length - 1) {
-      setNextIteration();
-    } else {
-      setCurrentWordIndex(currentWordIndex + 1);
-    }
+    setCurrentWordIndex(prev => prev + 1);
     setIsChecked(false);
   };
 
   const setNextIteration = () => {
-    if (mistakenWords.length === 0) {
-      setIsLessonFinished(true);
-    } else {
-      setCurrentWordIndex(0);
-      setWords(shuffleArray(mistakenWords));
-      setMistakenWords([]);
-    }
+    setCurrentWordIndex(() => 0);
+    setWords(() => {
+      return shuffleArray(mistakenWords)
+    });
+    setMistakenWords([]);
+    setCorrectWords([]);
+    setIsChecked(false);
   };
+
+  useEffect(() => {
+    if(correctWords.length + mistakenWords.length === words.length && words.length > 0) {
+      setNextIteration();
+    } else if(words.length > 0 && (correctWords.length > 0 || mistakenWords.length > 0)) {
+      setNextWord();
+    }
+  }, [correctWords, mistakenWords]);
 
   useEffect(() => {
     if (down === null || up === null)
@@ -79,10 +79,11 @@ export const useCardGrindLesson = (): CardGrindLesson => {
       .then(() => setIsLoading(false));
   }, []);
 
+
+
   return {
     isLoading,
     isChecked,
-    isLessonFinished,
     currentWord,
     turnCard,
     correctClick,

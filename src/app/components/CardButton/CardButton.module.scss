@@ -1,0 +1,16 @@
+.CardButton {
+  all: unset;
+  min-width: 10rem;
+  flex: 1;
+
+  height: 3rem;
+
+  font-family: var(--font-main-latin);
+  font-size: 2rem;
+  text-align: center;
+
+  user-select: none;
+  border-radius: 1rem;
+
+  transition: 200ms;
+}

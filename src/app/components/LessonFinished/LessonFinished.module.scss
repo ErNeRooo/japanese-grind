@@ -1,0 +1,49 @@
+.column {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.finished {
+  font-family: var(--font-main-latin);
+  margin: 0.5rem;
+}
+.finishedJapanese {
+  font-family: var(--font-main-japanese);
+  margin: 0.5rem;
+}
+.finishedMessage {
+  font-family: var(--font-main-latin);
+  font-weight: 500;
+  font-size: 1.5rem;
+
+  color: var(--color-second-font);
+}
+.returnButton {
+  all: unset;
+  width: 100%;
+
+  color: var(--color-success);
+  border: 0.2rem solid var(--color-success);
+  border-radius: 1rem;
+  cursor: pointer;
+  user-select: none;
+
+  text-align: center;
+  font-family: var(--font-main-japanese);
+  font-size: 2rem;
+
+  transition: 200ms;
+
+  &:hover {
+    background-color: var(--color-success);
+    color: var(--color-background);
+  }
+
+  &:active {
+    transform: scale(0.95);
+    border-radius: 2rem;
+  }
+}

@@ -1,0 +1,35 @@
+.CardFront {
+  all: inherit;
+}
+
+.row {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.column {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.checkButton {
+  border: 0.2rem solid var(--color-main-font);
+  color: var(--color-main-font);
+
+  &:hover {
+    background-color: var(--color-main-font);
+    color: var(--color-background);
+  }
+
+  &:active {
+    color: var(--color-accent);
+    transform: scale(0.95);
+    border-radius: 2rem;
+  }
+}

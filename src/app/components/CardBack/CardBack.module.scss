@@ -1,0 +1,58 @@
+.CardBack {
+  all: inherit;
+}
+
+.row {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.column {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mistakeButton {
+  border: 0.2rem solid var(--color-error);
+  color: var(--color-error);
+
+  &:hover {
+    background-color: var(--color-error);
+    color: var(--color-background);
+  }
+
+  &:active {
+    transform: scale(0.95);
+    border-radius: 2rem;
+  }
+}
+
+.correctButton {
+  border: 0.2rem solid var(--color-success);
+  color: var(--color-success);
+
+  &:hover {
+    background-color: var(--color-success);
+    color: var(--color-background);
+  }
+
+  &:active {
+    transform: scale(0.95);
+    border-radius: 2rem;
+  }
+}
+
+.buttons {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}

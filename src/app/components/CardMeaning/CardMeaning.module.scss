@@ -1,0 +1,15 @@
+.column {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.meaningLabel {
+  width: 100%;
+
+  text-align: center;
+  font-size: 2rem;
+  font-family: var(--font-main-latin);
+}

@@ -8,9 +8,15 @@ interface Props {
   currentWord: Word;
   correctClick: () => void;
   mistakeClick: () => void;
+  turnCardClick: () => void;
 }
 
-const CardBack = ({ currentWord, correctClick, mistakeClick }: Props) => {
+const CardBack = ({
+  currentWord,
+  correctClick,
+  mistakeClick,
+  turnCardClick,
+}: Props) => {
   return (
     <div className={styles.CardBack}>
       <div className={styles.column}>
@@ -30,6 +36,11 @@ const CardBack = ({ currentWord, correctClick, mistakeClick }: Props) => {
             text="Correct"
             style={styles.correctButton}
             action={correctClick}
+          />
+          <CardButton
+            text="Hide"
+            style={styles.turnCardButton}
+            action={turnCardClick}
           />
         </div>
       </div>

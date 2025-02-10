@@ -48,6 +48,22 @@
   }
 }
 
+.turnCardButton {
+  border: 0.2rem solid var(--color-main-font);
+  color: var(--color-main-font);
+
+  &:hover {
+    background-color: var(--color-main-font);
+    color: var(--color-background);
+  }
+
+  &:active {
+    color: var(--color-accent);
+    transform: scale(0.95);
+    border-radius: 2rem;
+  }
+}
+
 .buttons {
   width: 100%;
 

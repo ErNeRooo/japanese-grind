@@ -27,6 +27,7 @@ const Card = ({
           currentWord={currentWord}
           correctClick={correctClick}
           mistakeClick={mistakeClick}
+          turnCardClick={turnCard}
         />
       )}
     </div>

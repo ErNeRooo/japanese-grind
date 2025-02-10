@@ -3,9 +3,12 @@ import styles from "./CardBack.module.scss";
 import BackButton from "../BackButton/BackButton";
 import CardJapanese from "../CardJapanese/CardJapanese";
 import CardButton from "../CardButton/CardButton";
+import LessonInfo from "@/app/types/LessonInfo";
+import LessonInfoBar from "../LessonInfoBar/LessonInfoBar";
 
 interface Props {
   currentWord: Word;
+  lessonInfo: LessonInfo;
   correctClick: () => void;
   mistakeClick: () => void;
   turnCardClick: () => void;
@@ -13,6 +16,7 @@ interface Props {
 
 const CardBack = ({
   currentWord,
+  lessonInfo,
   correctClick,
   mistakeClick,
   turnCardClick,
@@ -22,6 +26,7 @@ const CardBack = ({
       <div className={styles.column}>
         <div className={styles.row}>
           <BackButton routingPath="/vocabulary" />
+          <LessonInfoBar lessonInfo={lessonInfo} className={styles.toRight} />
         </div>
         <CardJapanese currentWord={currentWord} />
       </div>

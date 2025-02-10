@@ -18,6 +18,10 @@
   align-items: center;
 }
 
+.toRight {
+  margin-left: auto;
+}
+
 .checkButton {
   border: 0.2rem solid var(--color-main-font);
   color: var(--color-main-font);

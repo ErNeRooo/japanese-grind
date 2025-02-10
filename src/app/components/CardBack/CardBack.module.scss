@@ -18,6 +18,10 @@
   align-items: center;
 }
 
+.toRight {
+  margin-left: auto;
+}
+
 .mistakeButton {
   border: 0.2rem solid var(--color-error);
   color: var(--color-error);

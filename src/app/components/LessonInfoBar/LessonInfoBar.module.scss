@@ -1,0 +1,25 @@
+.LessonInfoBar {
+  font-size: 1rem;
+  font-family: var(--font-main-latin);
+  margin: 0;
+
+  span {
+    margin: 0;
+  }
+  label {
+    margin: 0.1rem;
+  }
+
+  .iteration {
+    color: var(--color-second-font);
+  }
+  .words {
+    color: var(--color-main-font);
+  }
+  .mistakes {
+    color: var(--color-error);
+  }
+  .corrects {
+    color: var(--color-success);
+  }
+}

@@ -4,11 +4,13 @@ import { useSearchParams } from "next/navigation";
 import shuffleArray from "../utils/shuffleArray";
 import mapWordsFromDto from "../utils/mapWordsFromDto";
 import fetchJsonDictionary from "../service/fetchJsonDictionary";
+import LessonInfo from "../types/LessonInfo";
 
 export interface CardGrindLesson {
   isLoading: boolean;
   isChecked: boolean;
   currentWord: Word;
+  lessonInfo: LessonInfo;
   turnCard: () => void;
   correctClick: () => void;
   mistakeClick: () => void;
@@ -23,6 +25,13 @@ export const useCardGrindLesson = (): CardGrindLesson => {
   const [correctWords, setCorrectWords] = useState<Word[]>([]);
   const [mistakenWords, setMistakenWords] = useState<Word[]>([]);
 
+  const [lessonInfo, setLessonInfo] = useState<LessonInfo>({
+    iterationCount: 0,
+    wordsCount: 0,
+    mistakesCount: 0,
+    correctCount: 0,
+  });
+
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const currentWord = words[currentWordIndex];
 
@@ -34,32 +43,50 @@ export const useCardGrindLesson = (): CardGrindLesson => {
   };
 
   const correctClick = () => {
-    setCorrectWords(prev => [...prev, words[currentWordIndex]]);
+    setCorrectWords((prev) => [...prev, words[currentWordIndex]]);
   };
 
   const mistakeClick = () => {
-    setMistakenWords(prev => [...prev, words[currentWordIndex]]);
+    setMistakenWords((prev) => [...prev, words[currentWordIndex]]);
   };
 
   const setNextWord = () => {
-    setCurrentWordIndex(prev => prev + 1);
+    setCurrentWordIndex((prev) => prev + 1);
+    setLessonInfo((prev) => ({
+      ...prev,
+      wordsCount: words.length - (mistakenWords.length + correctWords.length),
+      mistakesCount: mistakenWords.length,
+      correctCount: correctWords.length,
+    }));
     setIsChecked(false);
   };
 
   const setNextIteration = () => {
     setCurrentWordIndex(() => 0);
     setWords(() => {
-      return shuffleArray(mistakenWords)
+      return shuffleArray(mistakenWords);
     });
+    setLessonInfo((prev) => ({
+      iterationCount: prev.iterationCount + 1,
+      wordsCount: mistakenWords.length,
+      mistakesCount: 0,
+      correctCount: 0,
+    }));
     setMistakenWords([]);
     setCorrectWords([]);
     setIsChecked(false);
   };
 
   useEffect(() => {
-    if(correctWords.length + mistakenWords.length === words.length && words.length > 0) {
+    if (
+      correctWords.length + mistakenWords.length === words.length &&
+      words.length > 0
+    ) {
       setNextIteration();
-    } else if(words.length > 0 && (correctWords.length > 0 || mistakenWords.length > 0)) {
+    } else if (
+      words.length > 0 &&
+      (correctWords.length > 0 || mistakenWords.length > 0)
+    ) {
       setNextWord();
     }
   }, [correctWords, mistakenWords]);
@@ -70,21 +97,27 @@ export const useCardGrindLesson = (): CardGrindLesson => {
 
     fetchJsonDictionary("/FilteredDictionary.json")
       .then((data) => {
-        setWords(
-          shuffleArray(
-            mapWordsFromDto(data).slice(Number(down) - 1, Number(up))
-          )
+        const selectedWords = mapWordsFromDto(data).slice(
+          Number(down) - 1,
+          Number(up)
         );
+
+        setWords(shuffleArray(selectedWords));
+        setLessonInfo(() => ({
+          iterationCount: 0,
+          wordsCount: selectedWords.length,
+          mistakesCount: 0,
+          correctCount: 0,
+        }));
       })
       .then(() => setIsLoading(false));
   }, []);
-
-
 
   return {
     isLoading,
     isChecked,
     currentWord,
+    lessonInfo,
     turnCard,
     correctClick,
     mistakeClick,

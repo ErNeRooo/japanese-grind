@@ -21,6 +21,7 @@ const GrindPage = () => {
     isLoading,
     isChecked,
     currentWord,
+    lessonInfo,
     turnCard,
     correctClick,
     mistakeClick,
@@ -33,12 +34,13 @@ const GrindPage = () => {
           <h1 className={styles.loading}>Loading...</h1>
         ) : (
           <>
-            { currentWord == undefined ? (
+            {currentWord == undefined ? (
               <LessonFinished routingPath="/vocabulary" />
             ) : (
               <Card
                 isChecked={isChecked}
                 currentWord={currentWord}
+                lessonInfo={lessonInfo}
                 turnCard={turnCard}
                 correctClick={correctClick}
                 mistakeClick={mistakeClick}

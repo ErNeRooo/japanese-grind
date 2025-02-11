@@ -22,6 +22,7 @@ const GrindPage = () => {
     isChecked,
     currentWord,
     lessonInfo,
+    setLessonInfo,
     turnCard,
     correctClick,
     mistakeClick,
@@ -35,12 +36,16 @@ const GrindPage = () => {
         ) : (
           <>
             {currentWord == undefined ? (
-              <LessonFinished routingPath="/vocabulary" />
+              <LessonFinished
+                routingPath="/vocabulary"
+                lessonDurationInSeconds={lessonInfo.passedTimeInSeconds}
+              />
             ) : (
               <Card
                 isChecked={isChecked}
                 currentWord={currentWord}
                 lessonInfo={lessonInfo}
+                setLessonInfo={setLessonInfo}
                 turnCard={turnCard}
                 correctClick={correctClick}
                 mistakeClick={mistakeClick}

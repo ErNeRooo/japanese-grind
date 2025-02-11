@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import Word from "../types/Word";
 import { useSearchParams } from "next/navigation";
 import shuffleArray from "../utils/shuffleArray";
@@ -11,6 +11,7 @@ export interface CardGrindLesson {
   isChecked: boolean;
   currentWord: Word;
   lessonInfo: LessonInfo;
+  setLessonInfo: Dispatch<SetStateAction<LessonInfo>>;
   turnCard: () => void;
   correctClick: () => void;
   mistakeClick: () => void;
@@ -30,6 +31,7 @@ export const useCardGrindLesson = (): CardGrindLesson => {
     wordsCount: 0,
     mistakesCount: 0,
     correctCount: 0,
+    passedTimeInSeconds: 0,
   });
 
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -67,6 +69,7 @@ export const useCardGrindLesson = (): CardGrindLesson => {
       return shuffleArray(mistakenWords);
     });
     setLessonInfo((prev) => ({
+      ...prev,
       iterationCount: prev.iterationCount + 1,
       wordsCount: mistakenWords.length,
       mistakesCount: 0,
@@ -103,7 +106,8 @@ export const useCardGrindLesson = (): CardGrindLesson => {
         );
 
         setWords(shuffleArray(selectedWords));
-        setLessonInfo(() => ({
+        setLessonInfo((prev) => ({
+          ...prev,
           iterationCount: 0,
           wordsCount: selectedWords.length,
           mistakesCount: 0,
@@ -118,6 +122,7 @@ export const useCardGrindLesson = (): CardGrindLesson => {
     isChecked,
     currentWord,
     lessonInfo,
+    setLessonInfo,
     turnCard,
     correctClick,
     mistakeClick,

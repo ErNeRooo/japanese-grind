@@ -18,8 +18,13 @@
   font-family: var(--font-main-latin);
   font-weight: 500;
   font-size: 1.5rem;
+  text-align: center;
 
   color: var(--color-second-font);
+
+  span {
+    color: var(--color-main-font);
+  }
 }
 .returnButton {
   all: unset;

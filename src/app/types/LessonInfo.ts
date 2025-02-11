@@ -3,6 +3,7 @@ interface LessonInfo {
   wordsCount: number;
   mistakesCount: number;
   correctCount: number;
+  passedTimeInSeconds: number;
 }
 
 export default LessonInfo;

@@ -1,12 +1,26 @@
 "use client";
-import { useState } from "react";
+import { useForm } from "react-hook-form";
 import styles from "./vocabulary.module.scss";
-import Link from "next/link";
 import BackButton from "../components/BackButton/BackButton";
+import { useRouter } from "next/navigation";
+
+type FormData = {
+  downIndex: number;
+  upIndex: number;
+};
 
 const Page = () => {
-  const [downIndex, setDownIndex] = useState(1);
-  const [upIndex, setUpIndex] = useState(10);
+  const { register, handleSubmit } = useForm({
+    defaultValues: {
+      downIndex: 1,
+      upIndex: 10,
+    },
+  });
+  const router = useRouter();
+
+  const onSubmit = ({ downIndex, upIndex }: FormData) => {
+    router.push(`/vocabulary/grind?downIndex=${downIndex}&upIndex=${upIndex}`);
+  };
 
   return (
     <div className={styles.page}>
@@ -21,34 +35,38 @@ const Page = () => {
           Choose the range of words you want to study!
         </p>
 
-        <div className={styles.row}>
-          <div className={styles.inputContainer}>
-            <label>from</label>
-            <input
-              type="number"
-              placeholder="1"
-              onChange={(e) => setDownIndex(Number(e.target.value))}
-            />
-          </div>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className={styles.row}>
+            <div className={styles.inputContainer}>
+              <label>from</label>
+              <input
+                type="number"
+                placeholder="1"
+                {...register("downIndex", {
+                  valueAsNumber: true,
+                  required: true,
+                })}
+              />
+            </div>
 
-          <div className={styles.inputContainer}>
-            <label>to</label>
-            <input
-              type="number"
-              placeholder="10"
-              onChange={(e) => setUpIndex(Number(e.target.value))}
-            />
+            <div className={styles.inputContainer}>
+              <label>to</label>
+              <input
+                type="number"
+                placeholder="10"
+                {...register("upIndex", {
+                  valueAsNumber: true,
+                  required: true,
+                })}
+              />
+            </div>
           </div>
-        </div>
-        <Link
-          href={{
-            pathname: "/vocabulary/grind",
-            query: { downIndex: downIndex, upIndex: upIndex },
-          }}
-          className={styles.grindLink}
-        >
-          <button className={styles.grindButton}>GRIND</button>
-        </Link>
+          <div className={styles.grindLink}>
+            <button type="submit" className={styles.grindButton}>
+              GRIND
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );

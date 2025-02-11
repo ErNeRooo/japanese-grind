@@ -13,6 +13,7 @@
   margin-bottom: 0;
 
   color: var(--color-second-font);
+  text-align: center;
 }
 
 .container {
@@ -31,10 +32,11 @@
   color: var(--color-main-font);
   box-sizing: border-box;
   border-radius: 1rem;
-  padding: 1rem;
+  padding: 0.5rem;
 
   form {
     all: inherit;
+    gap: 0.25rem;
   }
 }
 
@@ -50,6 +52,7 @@
   margin-top: 1.5rem;
 
   color: var(--color-second-font);
+  text-align: center;
 }
 
 .row {
@@ -137,4 +140,20 @@
     transform: scale(0.95);
     border-radius: 2rem;
   }
+}
+
+.errorMessage {
+  color: var(--color-error);
+  font-size: 0.75rem;
+  margin: 0.25rem;
+}
+.errors {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 1rem;
+
+  margin: 0;
 }

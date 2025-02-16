@@ -1,0 +1,37 @@
+.IconButton {
+  flex: 1;
+  aspect-ratio: 1 / 1;
+
+  position: relative;
+
+  box-sizing: border-box;
+  border: 0.3rem solid var(--color-main-font);
+  border-radius: 30%;
+  padding: 1rem;
+
+  background-color: transparent;
+  user-select: none;
+
+  transition: 200ms;
+
+  &:hover {
+    border-radius: 90%;
+    background-color: var(--color-main-font);
+  }
+
+  &:hover .icon {
+    filter: brightness(0) saturate(100%) invert(18%) sepia(53%) saturate(6512%)
+      hue-rotate(338deg) brightness(71%) contrast(115%);
+  }
+
+  &:active {
+    transition: 50ms;
+    background-color: var(--color-accent);
+    border: 0.3rem solid var(--color-accent);
+    transform: scale(0.95);
+  }
+  &:active .icon {
+    transition: 50ms;
+    filter: none;
+  }
+}

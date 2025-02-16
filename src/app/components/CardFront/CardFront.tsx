@@ -36,7 +36,11 @@ const CardFront = ({ currentWord, lessonInfo, turnCard }: Props) => {
         </button>
       </div>
 
-      <div className={styles.row}>{isWhiteboardVisible && <Whiteboard />}</div>
+      <div className={styles.row}>
+        {isWhiteboardVisible && (
+          <Whiteboard setIsWhiteboardVisible={setIsWhiteboardVisible} />
+        )}
+      </div>
 
       <div className={styles.row}>
         <CardButton text="Check" style={styles.checkButton} action={turnCard} />

@@ -1,12 +1,18 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./Whiteboard.module.scss";
+import IconButton from "../IconButton/IconButton";
 
-const Whiteboard = () => {
+interface Props {
+  setIsWhiteboardVisible: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Whiteboard = ({ setIsWhiteboardVisible }: Props) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const contextRef = useRef<CanvasRenderingContext2D>(null);
   const buttonsRef = useRef<HTMLDivElement>(null);
 
   const [isDrawing, setIsDrawing] = useState(false);
+  const [history, setHistory] = useState<ImageData[]>([]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -17,27 +23,24 @@ const Whiteboard = () => {
 
     if (!parent) return;
 
-    // Function to update canvas and buttons position
     const updateCanvasAndButtons = () => {
       const parentWidth = parent.clientWidth;
-      const size = parentWidth;
+      const width = parentWidth;
+      const height = parentWidth * 1.2;
 
       const context = canvas.getContext("2d");
       if (!context) return;
       const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
       const canvasTop = canvas.getBoundingClientRect().bottom;
 
-      // Resize the canvas
-      canvas.width = size;
-      canvas.height = size * 1.2;
-      canvas.style.width = `${size}px`;
-      canvas.style.height = `${size * 1.2}px`;
+      canvas.width = width;
+      canvas.height = height;
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
 
-      // Resize the buttons
-      buttons.style.width = `${size * 0.9}px`;
-      buttons.style.bottom = `${canvasTop - size * 1.2 + 20}px`;
+      buttons.style.width = `${width * 0.9}px`;
+      buttons.style.bottom = `${canvasTop - height + 20}px`;
 
-      // Restore the canvas drawing state
       context.putImageData(imageData, 0, 0);
       context.lineCap = "round";
       context.lineWidth = 3;
@@ -50,15 +53,22 @@ const Whiteboard = () => {
       contextRef.current = context;
     };
 
-    // Call the function on mount
     updateCanvasAndButtons();
 
-    // Then observe resizing
     const resizeObserver = new ResizeObserver(updateCanvasAndButtons);
     resizeObserver.observe(parent);
 
     return () => resizeObserver.disconnect();
   }, []);
+
+  const saveCanvasToHistory = () => {
+    const context = contextRef.current;
+    const canvas = canvasRef.current;
+    if (!context || !canvas) return;
+
+    const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+    setHistory((prevHistory) => [...prevHistory, imageData]);
+  };
 
   const startDrawing = ({
     nativeEvent: { offsetX, offsetY },
@@ -70,6 +80,9 @@ const Whiteboard = () => {
 
   const stopDrawing = () => {
     contextRef.current?.closePath();
+
+    saveCanvasToHistory();
+
     setIsDrawing(false);
   };
 
@@ -82,6 +95,38 @@ const Whiteboard = () => {
     }
   };
 
+  const clear = () => {
+    const context = contextRef.current;
+    if (!context) return;
+
+    context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+  };
+
+  const undo = () => {
+    const context = contextRef.current;
+    const canvas = canvasRef.current;
+    if (!context || !canvas || history.length === 0) return;
+
+    const newHistory = [...history];
+    newHistory.pop();
+
+    setHistory(newHistory);
+
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    if (newHistory.length > 0) {
+      const lastImageData = newHistory[newHistory.length - 1];
+      context.putImageData(lastImageData, 0, 0);
+    }
+  };
+
+  const cancel = () => {
+    setIsWhiteboardVisible(false);
+  };
+
+  const confirm = () => {
+    setIsWhiteboardVisible(false);
+  };
+
   return (
     <div className={styles.Whiteboard}>
       <canvas
@@ -92,18 +137,18 @@ const Whiteboard = () => {
       />
 
       <div className={styles.buttons} ref={buttonsRef}>
-        <button className={styles.rejectButton} onClick={stopDrawing}>
-          ❌
-        </button>
-        <button className={styles.button} onClick={stopDrawing}>
-          🧹
-        </button>
-        <button className={styles.button} onClick={stopDrawing}>
-          ↩️
-        </button>
-        <button className={styles.confirmButton} onClick={stopDrawing}>
-          ✅
-        </button>
+        <IconButton
+          iconPath="/cancel.svg"
+          className={styles.cancelButton}
+          action={cancel}
+        />
+        <IconButton iconPath="/clear.svg" action={clear} />
+        <IconButton iconPath="/undo.svg" action={undo} />
+        <IconButton
+          iconPath="/confirm.svg"
+          className={styles.confirmButton}
+          action={confirm}
+        />
       </div>
     </div>
   );

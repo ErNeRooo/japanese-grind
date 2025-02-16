@@ -6,7 +6,7 @@ interface Props {
   action: () => void;
 }
 
-const CardButton = ({ text, style, action }: Props) => {
+const CardButton = ({ text, style = "", action }: Props) => {
   return (
     <button className={`${styles.CardButton} ${style}`} onClick={action}>
       {text}

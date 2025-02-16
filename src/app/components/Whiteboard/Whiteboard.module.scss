@@ -1,0 +1,110 @@
+.Whiteboard {
+  padding: 1rem;
+  border-radius: 10rem;
+  min-width: 15rem;
+  max-width: 25rem;
+  width: 100%;
+  canvas {
+    all: unset;
+    min-width: 15rem;
+    max-width: 30rem;
+    width: 100%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 3rem;
+    box-sizing: border-box;
+
+    background-color: var(--color-surface);
+    cursor: crosshair;
+  }
+}
+
+.buttons {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.button {
+  all: unset;
+  min-width: 3rem;
+  flex: 1;
+
+  aspect-ratio: 1 / 1;
+
+  font-family: var(--font-main-latin);
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: center;
+
+  user-select: none;
+  border-radius: 1rem;
+
+  transition: 200ms;
+
+  border: 0.2rem solid var(--color-main-font);
+  color: var(--color-main-font);
+
+  &:hover {
+    background-color: var(--color-main-font);
+    color: var(--color-background);
+  }
+
+  &:active {
+    color: var(--color-accent);
+    transform: scale(0.95);
+    border-radius: 2rem;
+  }
+}
+
+.rejectButton {
+  @extend .button;
+
+  border: 0.2rem solid var(--color-error);
+  color: var(--color-error);
+
+  &:hover {
+    background-color: var(--color-error);
+    color: var(--color-background);
+  }
+
+  &:active {
+    transform: scale(0.95);
+    border-radius: 2rem;
+  }
+}
+
+.confirmButton {
+  @extend .button;
+
+  border: 0.2rem solid var(--color-success);
+  color: var(--color-success);
+
+  &:hover {
+    background-color: var(--color-success);
+    color: var(--color-background);
+  }
+
+  &:active {
+    transform: scale(0.95);
+    border-radius: 2rem;
+  }
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}

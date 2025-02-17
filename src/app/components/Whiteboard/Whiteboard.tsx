@@ -59,7 +59,9 @@ const Whiteboard = ({ setIsWhiteboardVisible, setKanjiDrawings }: Props) => {
     const resizeObserver = new ResizeObserver(updateCanvasAndButtons);
     resizeObserver.observe(parent);
 
-    return () => resizeObserver.disconnect();
+    return () => {
+      resizeObserver.disconnect();
+    };
   }, []);
 
   const saveCanvasToHistory = () => {
@@ -107,6 +109,7 @@ const Whiteboard = ({ setIsWhiteboardVisible, setKanjiDrawings }: Props) => {
       | React.MouseEvent<HTMLCanvasElement>
       | React.TouchEvent<HTMLCanvasElement>
   ) => {
+    event.preventDefault();
     let offsetX, offsetY;
 
     if ("touches" in event) {

@@ -11,12 +11,12 @@ export interface CardGrindLesson {
   isChecked: boolean;
   currentWord: Word;
   lessonInfo: LessonInfo;
-  kanjiDrawings: ImageData[];
+  kanjiDrawings: string[];
   setLessonInfo: Dispatch<SetStateAction<LessonInfo>>;
   turnCard: () => void;
   correctClick: () => void;
   mistakeClick: () => void;
-  setKanjiDrawings: Dispatch<SetStateAction<ImageData[]>>;
+  setKanjiDrawings: Dispatch<SetStateAction<string[]>>;
 }
 
 export const useCardGrindLesson = (): CardGrindLesson => {
@@ -28,7 +28,7 @@ export const useCardGrindLesson = (): CardGrindLesson => {
   const [correctWords, setCorrectWords] = useState<Word[]>([]);
   const [mistakenWords, setMistakenWords] = useState<Word[]>([]);
 
-  const [kanjiDrawings, setKanjiDrawings] = useState<ImageData[]>([]);
+  const [kanjiDrawings, setKanjiDrawings] = useState<string[]>([]);
 
   const [lessonInfo, setLessonInfo] = useState<LessonInfo>({
     iterationCount: 0,

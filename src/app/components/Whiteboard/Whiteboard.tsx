@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./Whiteboard.module.scss";
 import IconButton from "../IconButton/IconButton";
 
@@ -70,9 +70,24 @@ const Whiteboard = ({ setIsWhiteboardVisible }: Props) => {
     setHistory((prevHistory) => [...prevHistory, imageData]);
   };
 
-  const startDrawing = ({
-    nativeEvent: { offsetX, offsetY },
-  }: React.MouseEvent<HTMLCanvasElement>) => {
+  const startDrawing = (
+    event:
+      | React.MouseEvent<HTMLCanvasElement>
+      | React.TouchEvent<HTMLCanvasElement>
+  ) => {
+    let offsetX, offsetY;
+
+    if ("touches" in event) {
+      const rect = canvasRef.current?.getBoundingClientRect();
+      if (!rect) return;
+
+      offsetX = event.touches[0].clientX - rect.left;
+      offsetY = event.touches[0].clientY - rect.top;
+    } else {
+      offsetX = event.nativeEvent.offsetX;
+      offsetY = event.nativeEvent.offsetY;
+    }
+
     contextRef.current?.beginPath();
     contextRef.current?.moveTo(offsetX, offsetY);
     setIsDrawing(true);
@@ -86,9 +101,24 @@ const Whiteboard = ({ setIsWhiteboardVisible }: Props) => {
     setIsDrawing(false);
   };
 
-  const draw = ({
-    nativeEvent: { offsetX, offsetY },
-  }: React.MouseEvent<HTMLCanvasElement>) => {
+  const draw = (
+    event:
+      | React.MouseEvent<HTMLCanvasElement>
+      | React.TouchEvent<HTMLCanvasElement>
+  ) => {
+    let offsetX, offsetY;
+
+    if ("touches" in event) {
+      const rect = canvasRef.current?.getBoundingClientRect();
+      if (!rect) return;
+
+      offsetX = event.touches[0].clientX - rect.left;
+      offsetY = event.touches[0].clientY - rect.top;
+    } else {
+      offsetX = event.nativeEvent.offsetX;
+      offsetY = event.nativeEvent.offsetY;
+    }
+
     if (isDrawing) {
       contextRef.current?.lineTo(offsetX, offsetY);
       contextRef.current?.stroke();
@@ -133,6 +163,9 @@ const Whiteboard = ({ setIsWhiteboardVisible }: Props) => {
         onMouseDown={startDrawing}
         onMouseUp={stopDrawing}
         onMouseMove={draw}
+        onTouchStart={startDrawing}
+        onTouchEnd={stopDrawing}
+        onTouchMove={draw}
         ref={canvasRef}
       />
 

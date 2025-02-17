@@ -22,10 +22,12 @@ const GrindPage = () => {
     isChecked,
     currentWord,
     lessonInfo,
+    kanjiDrawings,
     setLessonInfo,
     turnCard,
     correctClick,
     mistakeClick,
+    setKanjiDrawings,
   }: CardGrindLesson = useCardGrindLesson();
 
   return (
@@ -45,10 +47,12 @@ const GrindPage = () => {
                 isChecked={isChecked}
                 currentWord={currentWord}
                 lessonInfo={lessonInfo}
+                kanjiDrawings={kanjiDrawings}
                 setLessonInfo={setLessonInfo}
                 turnCard={turnCard}
                 correctClick={correctClick}
                 mistakeClick={mistakeClick}
+                setKanjiDrawings={setKanjiDrawings}
               />
             )}
           </>

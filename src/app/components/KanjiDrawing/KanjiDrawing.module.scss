@@ -1,0 +1,17 @@
+.KanjiDrawing {
+  max-width: 14rem;
+  min-width: 4rem;
+  max-height: 14rem;
+
+  flex: 1;
+  aspect-ratio: 1 / 1;
+
+  position: relative;
+
+  box-sizing: border-box;
+  border-radius: 30%;
+  padding: 1rem;
+
+  background-color: transparent;
+  user-select: none;
+}

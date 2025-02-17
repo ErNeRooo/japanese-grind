@@ -4,9 +4,10 @@ import IconButton from "../IconButton/IconButton";
 
 interface Props {
   setIsWhiteboardVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  setKanjiDrawings: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
-const Whiteboard = ({ setIsWhiteboardVisible }: Props) => {
+const Whiteboard = ({ setIsWhiteboardVisible, setKanjiDrawings }: Props) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const contextRef = useRef<CanvasRenderingContext2D>(null);
   const buttonsRef = useRef<HTMLDivElement>(null);
@@ -154,6 +155,12 @@ const Whiteboard = ({ setIsWhiteboardVisible }: Props) => {
   };
 
   const confirm = () => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const imageURL = canvas.toDataURL("image/png");
+
+    setKanjiDrawings((prev) => [...prev, imageURL]);
     setIsWhiteboardVisible(false);
   };
 

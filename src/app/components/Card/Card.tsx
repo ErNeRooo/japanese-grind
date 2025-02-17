@@ -9,20 +9,24 @@ interface Props {
   isChecked: boolean;
   currentWord: Word;
   lessonInfo: LessonInfo;
+  kanjiDrawings: string[];
   setLessonInfo: Dispatch<SetStateAction<LessonInfo>>;
   turnCard: () => void;
   correctClick: () => void;
   mistakeClick: () => void;
+  setKanjiDrawings: Dispatch<SetStateAction<string[]>>;
 }
 
 const Card = ({
   isChecked,
   currentWord,
   lessonInfo,
+  kanjiDrawings,
   setLessonInfo,
   turnCard,
   correctClick,
   mistakeClick,
+  setKanjiDrawings,
 }: Props) => {
   useEffect(() => {
     const interval = setInterval(() => {
@@ -40,12 +44,15 @@ const Card = ({
         <CardFront
           currentWord={currentWord}
           lessonInfo={lessonInfo}
+          kanjiDrawings={kanjiDrawings}
           turnCard={turnCard}
+          setKanjiDrawings={setKanjiDrawings}
         />
       ) : (
         <CardBack
           currentWord={currentWord}
           lessonInfo={lessonInfo}
+          kanjiDrawings={kanjiDrawings}
           correctClick={correctClick}
           mistakeClick={mistakeClick}
           turnCardClick={turnCard}

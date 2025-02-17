@@ -7,6 +7,7 @@
 
   display: flex;
   flex-direction: row;
+  justify-content: center;
   gap: 0.5rem;
 }
 
@@ -75,4 +76,18 @@
   flex-direction: row;
   flex-wrap: wrap;
   gap: 0.5rem;
+}
+
+.drawings {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  border-radius: 2rem;
+}
+.kanjiDrawing {
+  max-width: 6rem;
 }

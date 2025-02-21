@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "./LessonFinished.module.scss";
-import formatTime from "@/app/utils/formatTime";
+import formatTimeFromSeconds from "@/app/utils/formatTimeFromSeconds";
 
 interface Props {
   routingPath: string;
@@ -8,7 +8,7 @@ interface Props {
 }
 
 const LessonFinished = ({ routingPath, lessonDurationInSeconds }: Props) => {
-  const formattedTime = formatTime(lessonDurationInSeconds);
+  const formattedTime = formatTimeFromSeconds(lessonDurationInSeconds);
 
   return (
     <div className={styles.column}>

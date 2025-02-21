@@ -1,6 +1,6 @@
 import LessonInfo from "@/app/types/LessonInfo";
 import styles from "./LessonInfoBar.module.scss";
-import formatTime from "@/app/utils/formatTime";
+import formatTimeFromSeconds from "@/app/utils/formatTimeFromSeconds";
 
 interface Props {
   lessonInfo: LessonInfo;
@@ -17,7 +17,7 @@ const LessonInfoBar = ({
   },
   className,
 }: Props) => {
-  const formattedTime = formatTime(passedTimeInSeconds);
+  const formattedTime = formatTimeFromSeconds(passedTimeInSeconds);
 
   return (
     <div className={`${styles.LessonInfoBar} ${className || ""}`}>

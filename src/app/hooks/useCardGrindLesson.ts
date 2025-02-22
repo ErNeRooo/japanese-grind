@@ -82,6 +82,7 @@ export const useCardGrindLesson = (): CardGrindLesson => {
     }));
     setMistakenWords([]);
     setCorrectWords([]);
+    setKanjiDrawings([]);
     setIsChecked(false);
   };
 

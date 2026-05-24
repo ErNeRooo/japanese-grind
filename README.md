@@ -1,3 +1,5 @@
+![Showcase](./japanese_grind_showcase.png)
+
 # Japanese Grind
 
 ## About
@@ -21,19 +23,23 @@ As a result, both applications now work together as one ecosystem.
 The system is split into two repositories that form a complete Japanese learning platform:
 
 ### Japanese Grind (this repository)
+
 👉 https://japanese-grind.vercel.app
 
 Built with **Next.js**, this application focuses on:
+
 - Main menu and navigation
 - Flashcards for learning the 5000 most frequent Japanese words
 
 ---
 
 ### JapanEasy (Vite application)
+
 👉 https://github.com/ErNeRooo/JapanEasy  
 👉 https://nihon-go-kaizen.web.app
 
 Built with **Vite**, this application focuses on:
+
 - Hiragana learning
 - Katakana learning
 - Japanese dictionary functionality
@@ -43,12 +49,14 @@ Built with **Vite**, this application focuses on:
 ## Tech Stack
 
 ### Japanese Grind
+
 - Next.js
 - React
 - TypeScript
 - Sass
 
 ### JapanEasy
+
 - React
 - Vite
 - TypeScript
